@@ -1,128 +1,31 @@
 <!DOCTYPE html>
-
-<html dir="rtl" lang="ar">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>V Keyboard | لوحة مفاتيح</title>
-<meta content="V Keyboard: لوحة مفاتيح مع أدوات للتصحيح، والتشكيل العربي، والزخرفة، وتعديل النصوص." name="description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VKeyboard</title>
 <style>
-:root{
-  --bg:#000;--surface:#1c1c1c;--line:#333;--text:#e8eaed;--muted:#9aa0a6;
-  --blue:#8ab4f8;--star:#f9ab00;--btn:#8ab4f8;--btn-text:#202124;
-  --font:Roboto,"IBM Plex Sans Arabic",system-ui,sans-serif;
-}
-
 *{box-sizing:border-box;margin:0;padding:0}
-
-html,body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100%;-webkit-tap-highlight-color:transparent}
-
-button,a{font-family:inherit}
-
-.hero{display:grid;grid-template-columns:88px 1fr;gap:14px;padding:8px 20px 16px;align-items:center}
-
-.icon-app{width:88px;height:88px;border-radius:20px;background:linear-gradient(145deg,#1a237e,#7c4dff 60%,#b388ff);display:grid;place-items:center;font-size:40px;font-weight:700;color:#fff;box-shadow:0 8px 28px rgba(124,77,255,.3)}
-
-.meta h1{font-size:24px;font-weight:500;line-height:1.25}
-
-.meta .dev{color:var(--blue);font-size:14px;margin-top:2px;font-weight:500}
-
-.meta .sub{color:var(--muted);font-size:12px;margin-top:4px}
-
-.actions{padding:14px 16px 6px}
-
-.btn-dl{
-  display:block;width:100%;text-align:center;background:var(--btn);color:var(--btn-text);
-  font-weight:700;font-size:15px;padding:13px;border-radius:999px;border:none;cursor:pointer;
-  text-decoration:none
-}
-
-.btn-dl:active{filter:brightness(.96)}
-
-.shots{display:flex;gap:10px;overflow-x:auto;padding:4px 16px 18px;scroll-snap-type:x mandatory}
-
-.shots::-webkit-scrollbar{height:0}
-
-.shot{flex:0 0 190px;scroll-snap-align:start;border-radius:14px;min-height:300px;padding:14px;border:1px solid #333;
-background:linear-gradient(160deg,#4a148c,#7b1fa2 45%,#ce93d8)}
-
-.shot:nth-child(2){background:linear-gradient(160deg,#311b92,#5e35b1 50%,#9575cd)}
-
-.shot:nth-child(3){background:linear-gradient(160deg,#1a237e,#3949ab 50%,#7986cb)}
-
-.shot h3{font-size:13px;font-weight:500;margin-bottom:10px}
-
-.phone{background:#fff;color:#222;border-radius:10px;padding:10px;font-size:12px;line-height:1.5;min-height:120px}
-
-.err{color:#c62828;text-decoration:line-through}
-
-.ok{color:#2e7d32;font-weight:500}
-
-.section{padding:6px 20px 22px}
-
-.section h2{font-size:17px;font-weight:500;margin-bottom:10px}
-
-.about{font-size:14px;line-height:1.85;color:#dadce0}
-
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-
-.chip{background:#2a2a2a;border:1px solid #333;border-radius:999px;padding:6px 11px;font-size:12px}
-.rm{font-size:11px;color:var(--muted)}
-
-.footer{text-align:center;padding:24px 16px 36px;color:var(--muted);font-size:12px;border-top:1px solid #1a1a1a}
-.hero{padding-top:28px}.actions{padding-bottom:20px}.preview-label{padding:0 20px 10px;color:var(--muted);font-size:12px}.shot{min-height:225px}.footer{padding:18px 16px 24px}
-a:focus-visible{outline:3px solid #fff;outline-offset:4px}
-
-:root{--bg:#111;--btn:#a8c7fa}.shot{min-height:280px}.app-info{display:flex;justify-content:space-around;margin:4px 20px 0;padding:12px 0}.app-info>div{text-align:center;flex:1;border-left:1px solid #333}.app-info>div:last-child{border-left:0}.app-info strong{display:block;font-size:13px;font-weight:500}.app-info span{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+html,body{background:#111;color:#e8eaed;font-family:Roboto,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100%}
+body{min-height:100vh;display:flex;flex-direction:column;align-items:center;text-align:center}
+main{flex:1;width:100%;max-width:420px;padding:56px 24px 24px;display:flex;flex-direction:column;align-items:center;gap:20px}
+h1{font-size:32px;font-weight:500}
+p.studio{font-size:18px;color:#9aa0a6}
+h2{font-size:20px;font-weight:500;color:#8ab4f8}
+.btn-dl{display:block;width:100%;text-align:center;background:#a8c7fa;color:#202124;font-weight:700;font-size:16px;padding:14px;border-radius:999px;text-decoration:none;margin-top:8px}
+.btn-dl:focus-visible,input:focus-visible{outline:3px solid #fff;outline-offset:4px}
+input[type=range]{width:100%;accent-color:#a8c7fa;height:32px}
+footer{padding:18px 16px 28px;color:#9aa0a6;font-size:13px}
 </style>
 </head>
 <body>
-<section class="hero">
-<div class="icon-app">V</div>
-<div class="meta">
-<h1>V Keyboard<br/>لوحة مفاتيح</h1>
-<div class="dev">Ahmed El King</div>
-<div class="sub">لوحة مفاتيح وأدوات للكتابة</div>
-</div>
-</section>
-<section aria-label="معلومات التطبيق" class="app-info"><div><strong>Android</strong><span>المنصة</span></div><div><strong>APK</strong><span>ملف التثبيت</span></div><div><strong>لوحة مفاتيح</strong><span>الفئة</span></div></section><section class="actions">
-<a class="btn-dl" download="V-Keyboard.apk" href="https://github.com/ahmedaumran702-ui/Ahmed-Wael-Omran/raw/refs/heads/main/2-V%20Keyboard.apk" id="dlBtn">تنزيل التطبيق</a>
-</section>
-<p class="preview-label">أمثلة توضيحية</p><section aria-label="أمثلة توضيحية" class="shots">
-<div class="shot">
-<h3>تصحيح فوري</h3>
-<div class="phone" dir="ltr">
-<div class="err">Why u not tell me meeting cancel</div>
-<div class="ok" style="margin-top:8px">Why didn't you tell me the meeting was canceled?</div>
-</div>
-</div>
-<div class="shot">
-<h3>تشكيل عربي</h3>
-<div class="phone">
-<div>كتب الطالب الدرس</div>
-<div class="ok" style="margin-top:8px">كَتَبَ الطَّالِبُ الدَّرْسَ</div>
-</div>
-</div>
-<div class="shot">
-<h3>زخرفة النصوص</h3>
-<div class="phone" dir="ltr">
-<div>V Keyboard</div>
-<div class="ok" style="margin-top:8px">🆅 🅺🅴🆈🅱🅾🅰🆁🅳</div>
-</div>
-</div>
-</section>
-<section class="section">
-<h2>لمحة عن التطبيق</h2>
-<p class="about">V Keyboard لوحة مفاتيح للكتابة اليومية، مع أدوات لتصحيح النصوص، والتشكيل العربي، والزخرفة، وتعديل الصياغة.</p>
-<div class="chips">
-<span class="chip">تصحيح</span>
-<span class="chip">تشكيل</span>
-<span class="chip">زخرفة</span>
-<span class="chip">تعديل نصوص</span>
-</div>
-</section>
-<footer class="footer">V Keyboard · Ahmed El King</footer>
+<main>
+<h1>VKeyboard</h1>
+<p class="studio">VKeyboard Studio</p>
+<h2>Ahmed El King</h2>
+<a class="btn-dl" download="V-Keyboard.apk" href="https://github.com/ahmedaumran702-ui/Ahmed-Wael-Omran/raw/refs/heads/main/2-V%20Keyboard.apk">Download</a>
+<input type="range" min="1" max="5" step="1" value="5" aria-label="Rating">
+</main>
+<footer>&copy; 2026 VKeyboard</footer>
 </body>
 </html>
