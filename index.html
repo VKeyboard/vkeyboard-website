@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>V Keyboard | لوحة مفاتيح</title>
+<meta content="V Keyboard لوحة مفاتيح ذكية: تصحيح، تشكيل، زخرفة، وتعديل نصوص. دعم أكثر من 100 لغة." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#000;--surface:#1c1c1c;--line:#333;--text:#e8eaed;--muted:#9aa0a6;
+  --blue:#8ab4f8;--star:#f9ab00;--btn:#8ab4f8;--btn-text:#202124;
+  --font:Roboto,"IBM Plex Sans Arabic",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100%;-webkit-tap-highlight-color:transparent}
+button,a{font-family:inherit}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;position:sticky;top:0;background:rgba(0,0,0,.94);z-index:10}
+.icon{background:none;border:none;color:var(--muted);font-size:20px;padding:6px;cursor:pointer}
+.hero{display:grid;grid-template-columns:88px 1fr;gap:14px;padding:8px 20px 16px;align-items:center}
+.icon-app{width:88px;height:88px;border-radius:20px;background:linear-gradient(145deg,#1a237e,#7c4dff 60%,#b388ff);display:grid;place-items:center;font-size:40px;font-weight:700;color:#fff;box-shadow:0 8px 28px rgba(124,77,255,.3)}
+.meta h1{font-size:24px;font-weight:500;line-height:1.25}
+.meta .dev{color:var(--blue);font-size:14px;margin-top:2px;font-weight:500}
+.meta .sub{color:var(--muted);font-size:12px;margin-top:4px}
+.metrics{display:flex;justify-content:space-around;align-items:center;padding:14px 8px;margin:0 12px;border-top:1px solid #222;border-bottom:1px solid #222}
+.metric{text-align:center}
+.metric .v{font-size:14px;font-weight:500}
+.metric .l{font-size:11px;color:var(--muted);margin-top:3px}
+.sep{width:1px;height:26px;background:#333}
+.actions{padding:14px 16px 6px}
+.btn-dl{
+  display:block;width:100%;text-align:center;background:var(--btn);color:var(--btn-text);
+  font-weight:700;font-size:15px;padding:13px;border-radius:999px;border:none;cursor:pointer;
+  text-decoration:none
+}
+.btn-dl:active{filter:brightness(.96)}
+.note{padding:6px 20px 14px;font-size:12px;color:var(--muted)}
+.shots{display:flex;gap:10px;overflow-x:auto;padding:4px 16px 18px;scroll-snap-type:x mandatory}
+.shots::-webkit-scrollbar{height:0}
+.shot{flex:0 0 190px;scroll-snap-align:start;border-radius:14px;min-height:300px;padding:14px;border:1px solid #333;
+background:linear-gradient(160deg,#4a148c,#7b1fa2 45%,#ce93d8)}
+.shot:nth-child(2){background:linear-gradient(160deg,#311b92,#5e35b1 50%,#9575cd)}
+.shot:nth-child(3){background:linear-gradient(160deg,#1a237e,#3949ab 50%,#7986cb)}
+.shot h3{font-size:13px;font-weight:500;margin-bottom:10px}
+.phone{background:#fff;color:#222;border-radius:10px;padding:10px;font-size:12px;line-height:1.5;min-height:120px}
+.err{color:#c62828;text-decoration:line-through}
+.ok{color:#2e7d32;font-weight:500}
+.section{padding:6px 20px 22px}
+.section h2{font-size:17px;font-weight:500;margin-bottom:10px}
+.about{font-size:14px;line-height:1.85;color:#dadce0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{background:#2a2a2a;border:1px solid #333;border-radius:999px;padding:6px 11px;font-size:12px}
+.data{font-size:13px}
+.row{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid #222}
+.row span:first-child{color:var(--muted)}
+.rating{display:grid;grid-template-columns:80px 1fr;gap:14px;align-items:center;margin-bottom:14px}
+.big{font-size:42px;font-weight:400;line-height:1}
+.stars{color:var(--star);font-size:13px;letter-spacing:1px}
+.bar{height:7px;background:#333;border-radius:99px;overflow:hidden;margin:4px 0}
+.bar i{display:block;height:100%;background:var(--blue)}
+.review{background:var(--surface);border:1px solid #2a2a2a;border-radius:14px;padding:12px;margin-bottom:10px}
+.rh{display:flex;gap:10px;align-items:center;margin-bottom:6px}
+.av{width:34px;height:34px;border-radius:50%;background:#3949ab;display:grid;place-items:center;font-weight:600;font-size:13px}
+.rn{font-size:14px;font-weight:500}.rm{font-size:11px;color:var(--muted)}
+.rs{color:var(--star);font-size:12px;margin-bottom:4px}
+.review p{font-size:13px;color:#dadce0;line-height:1.55}
+.form{background:var(--surface);border:1px solid #2a2a2a;border-radius:14px;padding:14px;margin-top:8px}
+.form label{display:block;font-size:12px;color:var(--muted);margin:0 0 6px}
+.form input,.form textarea{width:100%;background:#121212;border:1px solid #333;border-radius:10px;color:var(--text);padding:10px 12px;margin-bottom:10px;font:inherit;outline:none}
+.form textarea{min-height:80px;resize:vertical}
+.sp{display:flex;gap:6px;margin-bottom:10px}
+.sp button{width:34px;height:34px;border-radius:50%;border:none;background:#222;color:#666;cursor:pointer}
+.sp button.on{color:var(--star);background:#3a2f10}
+.footer{text-align:center;padding:24px 16px 36px;color:var(--muted);font-size:12px;border-top:1px solid #1a1a1a}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#323232;color:#fff;padding:11px 16px;border-radius:999px;font-size:13px;display:none;z-index:30}
+</style>
+</head>
+<body>
+
+<section class="hero">
+<div class="icon-app">V</div>
+<div class="meta">
+<h1>V Keyboard<br/>لوحة مفاتيح</h1>
+<div class="dev">V Keyboard Studio</div>
+<div class="sub">صفحة تنزيل V Keyboard</div>
+</div>
+</section>
+<section class="metrics">
+<div class="metric"><div class="v" id="downloads">0</div><div class="l">طلبات التنزيل هنا</div></div>
+<div class="sep"></div>
+<div class="metric"><div class="v" id="reviews">0</div><div class="l">تقييمات هذا المتصفح</div></div>
+<div class="sep"></div>
+<div class="metric"><div class="v" id="scope">محلي</div><div class="l">الإحصاءات على جهازك</div></div>
+</section>
+<section class="actions">
+<a class="btn-dl" download="V-Keyboard.apk" href="https://github.com/ahmedaumran702-ui/Ahmed-Wael-Omran/raw/refs/heads/main/2-V%20Keyboard.apk" id="dlBtn">تنزيل الآن</a>
+</section>
+<p class="note">التنزيل من الرابط الذي حدده المطور. العداد يسجل ضغطات زر التنزيل على هذا المتصفح فقط، ولا يؤكد اكتمال التحميل أو يجمع تنزيلات جميع الزوار.</p>
+<section aria-label="معاينات" class="shots">
+<div class="shot">
+<h3>تصحيح فوري</h3>
+<div class="phone">
+<div class="err">Why u not tell me meeting cancel</div>
+<div class="ok" style="margin-top:8px">Why didn't you tell me the meeting was canceled?</div>
+</div>
+</div>
+<div class="shot">
+<h3>تشكيل عربي</h3>
+<div class="phone">
+<div>كتب الطالب الدرس</div>
+<div class="ok" style="margin-top:8px">كَتَبَ الطَّالِبُ الدَّرْسَ</div>
+</div>
+</div>
+<div class="shot">
+<h3>زخرفة النصوص</h3>
+<div class="phone">
+<div>V Keyboard</div>
+<div class="ok" style="margin-top:8px">🆅 🅺🅴🆈🅱🅾🅰🆁🅳</div>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>لمحة عن التطبيق</h2>
+<p class="about">
+    V Keyboard لوحة مفاتيح سريعة ومستقرة للكتابة اليومية. تجمع في مكان واحد: التصحيح الإملائي والنحوي، التشكيل العربي، زخرفة النصوص، وأدوات تعديل الصياغة، مع دعم أكثر من 64 لغة للتصحيح وأكثر من 100 لغة للإدخال. مناسبة للدردشة والمستندات والنشر، مع سمات قابلة للتخصيص واختصارات للنصوص المتكررة.
+  </p>
+<div class="chips">
+<span class="chip">تصحيح</span>
+<span class="chip">تشكيل</span>
+<span class="chip">زخرفة</span>
+<span class="chip">تعديل نصوص</span>
+<span class="chip">100+ لغة</span>
+</div>
+</section>
+<section class="section data">
+<h2>بيانات التطبيق</h2>
+
+
+
+<div class="row"><span>المطور</span><span>V Keyboard Studio · Ahmed El King</span></div>
+</section>
+<section class="section">
+<h2>التقييمات والمراجعات</h2>
+<div class="rating">
+<div>
+<div class="big" id="avg">0.0</div>
+
+<div id="rc" style="font-size:11px;color:var(--muted);margin-top:4px">0 تقييم محلي</div>
+</div>
+
+</div>
+<div id="list"></div>
+<div class="form">
+<p class="about" style="font-size:12px;margin-bottom:12px">التقييمات محفوظة على متصفحك فقط، ولا تُرسل إلى المطور ولا تظهر لباقي الزوار. لا يوجد عداد تنزيلات أو تقييمات مشترك على هذه الصفحة.</p><h2 style="font-size:15px;margin-bottom:10px">اكتب تقييمك على هذا المتصفح</h2>
+<label for="name">الاسم</label>
+<input id="name" maxlength="40" placeholder="اسمك"/>
+<label>التقييم</label>
+<div class="sp" id="sp">
+<button aria-label="1 من 5" aria-pressed="false" data-v="1" type="button">★</button>
+<button aria-label="2 من 5" aria-pressed="false" data-v="2" type="button">★</button>
+<button aria-label="3 من 5" aria-pressed="false" data-v="3" type="button">★</button>
+<button aria-label="4 من 5" aria-pressed="false" data-v="4" type="button">★</button>
+<button aria-label="5 من 5" aria-pressed="true" data-v="5" type="button">★</button>
+</div>
+<label for="text">التعليق</label>
+<textarea id="text" maxlength="400" placeholder="تجربتك مع V Keyboard"></textarea>
+<button class="btn-dl" onclick="send()" type="button">حفظ التقييم على هذا المتصفح</button>
+</div>
+</section>
+<footer class="footer">V Keyboard · Ahmed El King</footer>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const APK = document.getElementById('dlBtn').href;
+const LS = 'vk_reviews_local_v3';
+const DL = 'vk_download_requests_local_v1';
+let pick = 5;
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',2600)}
+function load(){try{const a=JSON.parse(localStorage.getItem(LS)||'[]');return Array.isArray(a)?a:[]}catch(e){return []}}
+function getDownloads(){try{return Math.max(0,parseInt(localStorage.getItem(DL)||'0',10)||0)}catch(e){return 0}}
+function stars(n){return '★★★★★'.slice(0,n)+'☆☆☆☆☆'.slice(0,Math.max(0,5-n))}
+function render(){
+ const a=load(),list=document.getElementById('list');list.replaceChildren();
+ for(const r of a){
+  const article=document.createElement('article');article.className='review';
+  const name=document.createElement('div');name.className='rn';name.textContent=r.n||'مستخدم';
+  const score=document.createElement('div');score.className='rs';score.textContent=stars(Math.min(5,Math.max(1,Number(r.s)||1)));
+  const text=document.createElement('p');text.textContent=r.t||'';
+  const date=document.createElement('div');date.className='rm';date.textContent=r.d||'';
+  article.append(name,score,text,date);list.append(article);
+ }
+ const avg=a.length?a.reduce((v,r)=>v+(Number(r.s)||0),0)/a.length:0;
+ document.getElementById('avg').textContent=avg.toFixed(1);
+ document.getElementById('rc').textContent=a.length+' تقييم محلي';
+ document.getElementById('reviews').textContent=a.length;
+ document.getElementById('downloads').textContent=getDownloads();
+}
+function setPick(n){pick=n;for(const b of document.querySelectorAll('#sp button')){b.classList.toggle('on',Number(b.dataset.v)<=pick);b.setAttribute('aria-pressed',String(Number(b.dataset.v)===pick))}}
+document.getElementById('sp').addEventListener('click',e=>{const b=e.target.closest('button');if(b)setPick(Number(b.dataset.v))});
+function send(){
+ const n=document.getElementById('name').value.trim()||'مستخدم';
+ const t=document.getElementById('text').value.trim();
+ if(t.length<3){toast('اكتب تعليقا قصيرا');return}
+ const a=load();a.unshift({n,s:pick,t,d:new Date().toISOString().slice(0,10)});
+ try{localStorage.setItem(LS,JSON.stringify(a.slice(0,60)))}catch(e){toast('تعذر الحفظ في هذا المتصفح');return}
+ document.getElementById('text').value='';render();toast('تم الحفظ على هذا المتصفح فقط');
+}
+document.getElementById('dlBtn').addEventListener('click',()=>{
+ try{localStorage.setItem(DL,String(getDownloads()+1))}catch(e){}
+ render();toast('تم طلب التنزيل. تحقق من تنزيلات المتصفح');
+});
+setPick(5);render();
+</script>
+</body>
+</html>
